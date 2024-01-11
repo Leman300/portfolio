@@ -1,0 +1,15 @@
+.no-scroll {
+  overflow: hidden;
+}
+
+.glass-nav {
+  background-color: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+}
+
+.no-glass-nav {
+  background-color: transparent;
+  box-shadow: 0 0 transparent;
+  backdrop-filter: blur(0px);
+}

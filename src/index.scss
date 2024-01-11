@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+[id] {
+	scroll-margin-top: 76px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  &-track {
+    background: #505050;
+  }
+  &-thumb {
+    background: #96b6c5;
+    border-radius: 4px;
+  }
+}

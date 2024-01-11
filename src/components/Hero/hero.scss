@@ -1,0 +1,136 @@
+.bl-name {
+  text-shadow: 0 0 10px #fff;
+  transition: text-shadow 0.3s ease-in-out;
+
+  &:hover {
+    text-shadow: 0 0 20px #fff;
+  }
+}
+
+.wave-shake {
+  animation: wave-shake 2.5s both infinite;
+  transform-origin: 70% 70%;
+}
+
+.bounce-top {
+  display: block;
+  animation: bounce-top 2s infinite both;
+}
+
+@keyframes move-down {
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(2.4em);
+    opacity: 0;
+  }
+}
+
+@keyframes bounce-top {
+  0% {
+    transform: translate(-50%, -45px);
+    animation-timing-function: ease-in;
+    opacity: 1;
+  }
+  24% {
+    opacity: 1;
+  }
+  40% {
+    transform: translate(-50%, -24px);
+    animation-timing-function: ease-in;
+  }
+  65% {
+    transform: translate(-50%, -12px);
+    animation-timing-function: ease-in;
+  }
+  25%,
+  55%,
+  75%,
+  87% {
+    transform: translate(-50%, 0px);
+    animation-timing-function: ease-out;
+  }
+  100% {
+    transform: translate(-50%, 0px);
+    animation-timing-function: ease-out;
+    opacity: 1;
+  }
+}
+
+@keyframes wave-shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  }
+  20% {
+    transform: rotate(-8deg);
+  }
+  30% {
+    transform: rotate(14deg);
+  }
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes noise {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  10% {
+    transform: translate(-5%, -10%);
+  }
+  20% {
+    transform: translate(-15%, -20%);
+  }
+  30% {
+    transform: translate(-5%, -10%);
+  }
+  40% {
+    transform: translate(-15%, -20%);
+  }
+
+  50% {
+    transform: translate(-5%, -10%);
+  }
+  60% {
+    transform: translate(-15%, -20%);
+  }
+  70% {
+    transform: translate(-5%, -10%);
+  }
+  80% {
+    transform: translate(-15%, -20%);
+  }
+  90% {
+    transform: translate(-5%, -10%);
+  }
+  100% {
+    transform: translate(-15%, -20%);
+  }
+}
+
+.grain-overlay:after {
+  content: "";
+  position: fixed;
+  height: 300%;
+  width: 300%;
+  background-image: url("../../assets/img/Noise-bg.webp");
+  opacity: 0.09;
+  z-index: 2;
+  animation: noise 8s steps(10) infinite;
+}
+
