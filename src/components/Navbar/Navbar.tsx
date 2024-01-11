@@ -128,7 +128,7 @@ const Navbar = () => {
               </a>
               <a
                 className="p-2 transition hover:scale-125 hover:text-blue-200"
-                href="https://www.linkedin.com/in/bartosz-lemanek-7365b723a/"
+                href="https://www.linkedin.com/in/bartosz-lemanek/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="linkedin"
@@ -243,7 +243,7 @@ const Navbar = () => {
               </a>
               <a
                 className="p-4 transition hover:scale-125 hover:text-blue-200"
-                href="https://www.linkedin.com/in/bartosz-lemanek-7365b723a/"
+                href="https://www.linkedin.com/in/bartosz-lemanek/"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="linkedin"
