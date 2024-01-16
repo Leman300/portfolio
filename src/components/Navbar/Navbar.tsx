@@ -5,6 +5,7 @@ import { Link } from "react-scroll"
 import AnimatedLink from "./AnimatedLink"
 import "./navbar.scss"
 import "../UI/components.scss"
+import resumeCV from "../../assets/pdf/CV_EN.pdf"
 
 export const navLinks = [
   { title: "About", href: "/#about" },
@@ -22,6 +23,22 @@ const Navbar = () => {
     setNav(!nav)
     setOpen(!isOpen)
     document.body.classList.toggle("overflow-hidden", !nav)
+  }
+
+  const handleDownloadCV = async () => {
+    const response = await fetch(resumeCV)
+
+    if (response.ok) {
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+
+      const a = document.createElement("a")
+      a.href = url
+      a.download = "Bartosz_Lemanek-CV.pdf"
+      document.body.appendChild(a)
+      a.click()
+      document.body.removeChild(a)
+    }
   }
 
   const closeNavOutsideClick = useCallback(
@@ -136,14 +153,13 @@ const Navbar = () => {
                 <FaLinkedin size={25} />
               </a>
             </div>
-            <a
-              href="/"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              type="button"
+              onClick={handleDownloadCV}
               className="hidden mx-4 px-8 lg:block whitespace-nowrap resume-button glass cinzel-font"
             >
               Resume
-            </a>
+            </button>
           </div>
 
           <button
@@ -218,19 +234,17 @@ const Navbar = () => {
             >
               <AnimatedLink title={navLinks[2].title} />
             </Link>
-            <a
-              href="/"
-              target="_blank"
-              rel="noreferrer"
+            <button
+              type="button"
               className={
                 nav
                   ? "sm:py-4 py-3 sm:px-20 text-lg sm:text-2xl text-center opacity-100 transform translate-x-[0%] ease-in-out duration-1100 resume-button-sidebar glass mx-4 sm:mx-auto cinzel-font"
                   : "sm:py-4 py-3 sm:px-20 text-lg sm:text-2xl text-center opacity-0 transform translate-x-[100%] ease-in-out duration-100 resume-button-sidebar glass mx-4 sm:mx-auto cinzel-font"
               }
-              onClick={closeNavOnClick}
+              onClick={handleDownloadCV}
             >
               Resume
-            </a>
+            </button>
             <div className="flex items-center justify-center my-8">
               <a
                 className="p-4 transition hover:scale-125 hover:text-blue-200"
